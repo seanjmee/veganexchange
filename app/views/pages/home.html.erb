@@ -1,4 +1,90 @@
-<h1>Pages#home</h1>
+<div class="row"> <h1>Pages#home</h1> </div>
+
+<div class="row">
+	<div class="col-xs-12 col-sm-6 col-md-8">
+<div class="jumbotron">
+	<div class="container">
+    <h2> Timesheets made simple </h2>
+<%= image_tag 'timesheet.png' %>
+	</div>
+<p>With TimeQlip, enterprise companies have a centralized platform to track effort and progress for multiple teams and across the entire project portfolio—so that real-time, accurate reporting becomes the norm. Manage your timesheets, projects, tasks, resources and budgets from one powerful platform. TimeQlip also enables organizations to:
+</p>
+<br>
+
+</div>
+</div>
+<div class="col-xs-6 col-md-4">
+<div class="jumbotron">
+
+<h3> Schedule your demo! </h3>
+<%= bootstrap_form_tag url: '/subscribe' do |f| %>
+  <%= f.email_field :email, value: 'Enter your business email', icon: "envelope" %>
+  <%= f.submit value: "Submit", class: "btn btn-default" %>
+<% end %>
+<br>
+<p><ul>
+	<li>Simplify time tracking for their entire organization</li>
+	<li>Gain real-time visibility into project and budget status</li>
+	<li>Streamline workflow management and track team progress</li>
+</ul>
+</p>
+</div>
+</div>
+</div>
+
+<div class="jumbotron">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <%= image_tag "timesheet.png" %>
+    </div>
+
+    <div class="item">
+      <%= image_tag "timesheet.png" %>
+    </div>
+
+    <div class="item">
+      <%= image_tag "timesheet.png" %>
+    </div>
+
+    <div class="item">
+      <%= image_tag "timesheet.png" %>
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+
+<div class="jumbotron">
+<p>Find me in app/views/pages/home.html.erb</p>
+<br>
+<p>Click here to <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
+</div>
+
+<div class="jumbotron">
+<p>Find me in app/views/pages/home.html.erb</p>
+<br>
+<p>Click here to <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
+</div>
+
 <div class="jumbotron">
 <p>Find me in app/views/pages/home.html.erb</p>
 <br>
