@@ -1,5 +1,5 @@
 class AddClientIdToProjects < ActiveRecord::Migration
   def change
-    add_column :projects, :client_id, :number
+    add_column :projects, :client_id, :integer
   end
 end
