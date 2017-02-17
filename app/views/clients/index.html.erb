@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Clients</h1>
+<div class="jumbotron">
+<div class="table-responsive">
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Primary contact name</th>
+      <th>Primary contact email</th>
+      <th>Industry</th>
+      <th>Account type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clients.each do |client| %>
+      <tr>
+        <td><%= client.name %></td>
+        <td><%= client.primary_contact_name %></td>
+        <td><%= client.primary_contact_email %></td>
+        <td><%= client.industry %></td>
+        <td><%= client.account_type %></td>
+        <td><%= link_to 'Show', client %></td>
+        <td><%= link_to 'Edit', edit_client_path(client) %></td>
+        <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+<%= link_to 'New Client', new_client_path, class: "btn btn-primary" %>
+</div>

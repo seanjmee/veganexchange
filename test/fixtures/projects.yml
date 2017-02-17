@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  start_date: 2017-01-30
+  due_date: 2017-01-30
+  project_status: MyText
+  project_revenue: 9.99
+
+two:
+  title: MyString
+  description: MyText
+  start_date: 2017-01-30
+  due_date: 2017-01-30
+  project_status: MyText
+  project_revenue: 9.99
