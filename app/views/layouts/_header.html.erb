@@ -9,7 +9,7 @@
     </button>
     <%= image_tag 'logo1.png', class: "navbar-brand" %>
   </div>
-
+<% if !user_signed_in? %>
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav navbar-right">
@@ -20,3 +20,16 @@
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
+
+<% else %>
+<!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to "CLIENTS", clients_path %></li>
+      <li><%= link_to "PROJECTS", projects_path %></li> 
+      <li><%= link_to "TEAM", pages_about_path %></li> 
+      <li><%= link_to "Hi, #{current_user.email.upcase}", edit_user_registration_path %></li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
+<% end %>
