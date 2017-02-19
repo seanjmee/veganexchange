@@ -19,11 +19,11 @@
     <% @projects.each do |project| %>
       <tr>
         <td><%= project.title %></td>
-        <td><%= project.description %></td>
+        <td><%= project.client.name %></td>
         <td><%= project.start_date %></td>
         <td><%= project.due_date %></td>
         <td><%= project.project_status %></td>
-        <td><%= project.project_revenue %></td>
+        <td><%= "$" + project.project_revenue.to_s + "0" %></td>
         <td><%= link_to 'Show', project %></td>
         <td><%= link_to 'Edit', edit_project_path(project) %></td>
         <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
