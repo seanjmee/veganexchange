@@ -1,8 +1,44 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Projects</h1>
-<div class="jumbotron">
-<table class="table table-inverse">
+<br>
+<br>
+
+<h2>5 Projects across 3 Clients</h2>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="well well-sm">
+      <div class="list-group">
+      <li class="list-group-item list-group-item-success">0 Escalated Projects </li>
+      <li class="list-group-item list-group-item-success">4 Active Projects </li>
+      <li class="list-group-item list-group-item-info"> 2 Archived Projects </li>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="well well-sm">
+      <div class="list-group">
+      <li class="list-group-item list-group-item-info"> 2 Projects started this month</li>
+      <li class="list-group-item list-group-item-danger"> 0 Projects Overdue </li>
+      <li class="list-group-item list-group-item-warning"> 0 Projects due this month </li>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+  <div class="well well-sm">
+     <div class="list-group">
+      <li class="list-group-item list-group-item-info"> $350000 Revenue from Active Projects </li>
+      <li class="list-group-item list-group-item-info"> $0 Escalated Projects </li>
+    </div>
+  </div>
+</div>
+</div>
+
+<br>
+<%= link_to  new_project_path,class: "btn btn-primary" do %>
+    <span class="glyphicon glyphicon-th-large"> </span> Create New Project 
+    <% end %>
+<br>
+<table class="table" id="projects_table">
   <thead>
     <tr>
       <th>Title</th>
@@ -11,7 +47,9 @@
       <th>Due date</th>
       <th>Project status</th>
       <th>Project revenue</th>
-      <th colspan="3"></th>
+      <th - </th>
+      <th - </th>
+      <th - </th>
     </tr>
   </thead>
 
@@ -19,19 +57,19 @@
     <% @projects.each do |project| %>
       <tr>
         <td><%= project.title %></td>
-        <td><%= project.client.name %></td>
+        <td><%= link_to project.client.name, client_path(project.client.id) %></td>
         <td><%= project.start_date %></td>
         <td><%= project.due_date %></td>
         <td><%= project.project_status %></td>
         <td><%= "$" + project.project_revenue.to_s + "0" %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Delete', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', project, class: "btn btn-primary btn-sm", icon: "remove" %></td>
+        <td><%= link_to 'Edit', edit_project_path(project), class: "btn btn-primary btn-sm" %></td>
+        <td><%= link_to 'Delete', project, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary btn-sm" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-</div>
-<%= link_to 'New Project', new_project_path,class: "btn btn-primary" %>
+
+
