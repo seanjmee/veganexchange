@@ -62,9 +62,9 @@
         <td><%= project.due_date %></td>
         <td><%= project.project_status %></td>
         <td><%= "$" + project.project_revenue.to_s + "0" %></td>
-        <td><%= link_to 'Show', project, class: "btn btn-primary btn-sm", icon: "remove" %></td>
-        <td><%= link_to 'Edit', edit_project_path(project), class: "btn btn-primary btn-sm" %></td>
-        <td><%= link_to 'Delete', project, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary btn-sm" %></td>
+        <td><%= link_to project, class: "btn btn-primary btn-sm" do %> <span class="glyphicon glyphicon-eye-open"</span> <% end %></td>
+        <td><%= link_to edit_project_path(project), class: "btn btn-primary btn-sm" do %> <span class="glyphicon glyphicon-pencil"</span>  <% end %> </td>
+        <td><%= link_to project, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary btn-sm" do %> <span class="glyphicon glyphicon-trash"</span>  <% end %></td>
       </tr>
     <% end %>
   </tbody>
