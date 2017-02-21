@@ -1,5 +1,14 @@
-<h1>New Project</h1>
+<br>
+<br>
+<br>
 
+<h1>Set up a new Project</h1>
+ <div class="well well-sm">
+<p>Use the form below to create a new project. Please ensure the Client this project relates to has already been set up in TimeQlip. If you need to set up a new client now, please <%= link_to 'click here', new_client_path, class: "btn btn-default" %> </p>
+
+<p>Once the project has been created, you can assign team members so they can track time against this project, and client. </p>
+</div>
+<br>
 <%= render 'form' %>
 
 <%= link_to 'Back', projects_path %>

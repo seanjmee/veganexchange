@@ -1,4 +1,4 @@
-
+ <div class="well well-sm">
 <%= bootstrap_form_for(@project) do |f| %>
   <% if @project.errors.any? %>
     <div id="error_explanation">
@@ -12,11 +12,14 @@
     </div>
   <% end %>
 
+ <div class="field">
+  <%= f.select :client_id, options_for_select(Client.all.map{|s|[s.name, s.id]}), help: "Every Project in TimeQlip must be associated with a Client. Please use the dropdown to select a Client to associate this Project with" %>
+</div>
   <div class="field">
-    <%= f.text_field :title %>
+    <%= f.text_field :title, help: "Enter a title for this Project" %>
   </div>
   <div class="field">
-    <%= f.text_area :description %>
+    <%= f.text_area :description, help: "List objectives and deliverables for this Project" %>
   </div>
   <%= f.form_group do %>
   <div class="field">
@@ -27,17 +30,15 @@
   </div>
   <% end %>
   <div class="field">
-    <%= f.select :project_status, options_for_select(["Active", "Inactive", "Escalated"], "Active") %>
+    <%= f.select :project_status, options_for_select(["Active", "Inactive", "Escalated"], "Active"), help: "Assign or change a project's status. Options are Active, Inactive and Escalated" %>
   </div>
   <div class="field">
 
     <%= f.text_field :project_revenue, :prepend => '$', :append => ".00" %>
   </div>
-  <div class="field">
-
-  <%= f.select :client_id, options_for_select(Client.all.map{|s|[s.name, s.id]}) %>
-</div>
+ 
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+</div>
