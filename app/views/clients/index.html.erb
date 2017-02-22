@@ -1,9 +1,39 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Clients</h1>
-<div class="jumbotron">
-<div class="table-responsive">
-<table class="table">
+<br>
+<br>
+
+<h2>Client Management</h2>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="well well-sm">
+      Top Clients by Project
+      <div class="list-group">
+      <li class="list-group-item list-group-item-success">Demotron LLC (2) </li>
+      <li class="list-group-item list-group-item-success">Acme Inc (1) </li>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="well well-sm">
+      Top Clients by Revenue
+      <div class="list-group">
+      <li class="list-group-item list-group-item-success"> Acme Inc $120000</li>
+      <li class="list-group-item list-group-item-success"> Demotron LLC $ 90000 </li>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+<br>
+<%= link_to new_client_path, class: "btn btn-primary" do %>
+    <span class="glyphicon glyphicon-user"> </span> Create New Client 
+    <% end %>
+<br>
+<br>
+
+<table class="table" id="clients_table">
   <thead>
     <tr>
       <th>Name</th>
@@ -34,5 +64,5 @@
 
 <br>
 
-<%= link_to 'New Client', new_client_path, class: "btn btn-primary" %>
+
 </div>
