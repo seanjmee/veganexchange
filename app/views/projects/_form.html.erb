@@ -13,7 +13,7 @@
   <% end %>
 
  <div class="field">
-  <%= f.select :client_id, options_for_select(Client.all.map{|s|[s.name, s.id]}), help: "Every Project in TimeQlip must be associated with a Client. Please use the dropdown to select a Client to associate this Project with" %>
+  <%= f.select :client_id, options_for_select(Client.all.map{|s|[s.name, s.id]}), help: "Every Project in TimeQlip must be associated with an existing Client. Please use the dropdown to select a Client to associate this Project with" %>
 </div>
   <div class="field">
     <%= f.text_field :title, help: "Enter a title for this Project" %>
@@ -23,18 +23,18 @@
   </div>
   <%= f.form_group do %>
   <div class="field">
-    <%= f.text_field :start_date, "data-provide" => 'datepicker', icon: "calendar" %>
+    <%= f.text_field :start_date, "data-provide" => 'datepicker', icon: "calendar", help: "When this Project is due to commence" %>
   </div>
   <div class="field">
-     <%= f.text_field :due_date, "data-provide" => 'datepicker', icon: "calendar" %>
+     <%= f.text_field :due_date, "data-provide" => 'datepicker', icon: "calendar", help: "Assigning an end date lets you identify and report on Projects which are nearing a deadline, or have become overdue" %>
   </div>
   <% end %>
   <div class="field">
-    <%= f.select :project_status, options_for_select(["Active", "Inactive", "Escalated"], "Active"), help: "Assign or change a project's status. Options are Active, Inactive and Escalated" %>
+    <%= f.select :project_status, options_for_select(["Active", "Inactive", "Escalated"], "Active"), help: "Assign or change a Project's status. Options are Active, Inactive and Escalated" %>
   </div>
   <div class="field">
 
-    <%= f.text_field :project_revenue, :prepend => '$', :append => ".00" %>
+    <%= f.text_field :project_revenue, :prepend => '$', :append => ".00", help: "Facilitates enhanced cost and profitability reporting for this Project, and Client" %>
   </div>
  
   <div class="actions">
