@@ -25,10 +25,10 @@
 <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav navbar-right">
-      <li><%= link_to "CLIENTS", clients_path %></li>
-      <li><%= link_to "PROJECTS", projects_path %></li> 
-      <li><%= link_to "TEAM", pages_about_path %></li> 
-      <li><%= link_to "Hi,   #{current_user.email.upcase}", edit_user_registration_path %></li>
+      <li><%= link_to clients_path, class: "btn" do %> <i class="glyphicon glyphicon-file"></i> CLIENTS <% end %></li>
+      <li><%= link_to projects_path, class: "btn" do %> <i class="glyphicon glyphicon-th"></i> PROJECTS <% end %></li >
+      <li><%= link_to clients_path, class: "btn" do %> <i class="glyphicon glyphicon-user"></i> TEAM <% end %></li>
+      <li><%= link_to "#{current_user.email}", edit_user_registration_path %></li>
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
