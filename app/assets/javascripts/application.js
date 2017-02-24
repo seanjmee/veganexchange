@@ -23,3 +23,7 @@
 $('#projects_table').DataTable({
   responsive: true
 });
+
+$('#clients').DataTable({
+  responsive: true
+});
