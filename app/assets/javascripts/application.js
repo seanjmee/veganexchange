@@ -12,8 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require dataTables/jquery.dataTables
+//= require dataTables/extras/dataTables.responsive
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker
 //= require dataTables/jquery.dataTables
 //= require_tree .
+
+$('#projects_table').DataTable({
+  responsive: true
+});
