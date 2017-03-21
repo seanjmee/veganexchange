@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20170311012136) do
     t.decimal  "project_revenue"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.decimal  "client_id"
+    t.integer  "client_id"
   end
 
   create_table "users", force: :cascade do |t|
