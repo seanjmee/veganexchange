@@ -6,4 +6,5 @@ class Project < ActiveRecord::Base
 	validates :project_status, presence: true
 	
 	belongs_to :client
+	has_many :tasks
 end
