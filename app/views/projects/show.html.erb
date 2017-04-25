@@ -30,5 +30,12 @@
   <%= @project.project_revenue %>
 </p>
 
+<p>
+  Tasks
+</p>
+<p>
+  <%= @project.tasks.each { |t| puts t.title } %>
+</p>
+
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

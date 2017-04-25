@@ -31,6 +31,39 @@
   <%= @client.account_type %>
 </p>
 
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
+<br>
+<h2> <%= "#{@projects.count} Project(s) for this Client"  %> </h2>
+<table class="table responsive no-wrap" id="clients_project_table">
+  <thead>
+    <tr>
+      <th>Project Name</th>
+      <th>Start Date</th>
+      <th>Due Date</th>
+      <th>Status</th>
+      <th># of Tasks</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= project.title %></td>
+        <td><%= project.start_date.strftime("%e %B, %Y") %></td>
+        <td><%= project.due_date.strftime("%e %B, %Y") %></td>
+        <td><%= project.project_status %></td>
+        <td><%= "#{project.tasks.count}" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to edit_client_path, class: "btn btn-primary" do %>
+    <span class="glyphicon glyphicon-pencil"> </span> Edit Client 
+<% end %>
+<br>
+<br>
+<%= link_to clients_path, class: "btn btn-primary" do %>
+    <span class="glyphicon glyphicon-file"> </span> All Clients 
+<% end %>
+
 </div>
