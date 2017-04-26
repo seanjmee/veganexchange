@@ -48,8 +48,8 @@
     <% @projects.each do |project| %>
       <tr>
         <td><%= project.title %></td>
-        <td><%= project.start_date.strftime("%e %B, %Y") %></td>
-        <td><%= project.due_date.strftime("%e %B, %Y") %></td>
+        <td><%= project.start_date.try(:strftime, "%e %B, %Y") %></td>
+        <td><%= project.due_date.try(:strftime, "%e %B, %Y") %></td>
         <td><%= project.project_status %></td>
         <td><%= "#{project.tasks.count}" %></td>
       </tr>
