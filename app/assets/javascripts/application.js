@@ -24,6 +24,6 @@ $('#projects_table').DataTable({
   responsive: true
 });
 
-$('#clients').DataTable({
+$('#clients_table').DataTable({
   responsive: true
 });
