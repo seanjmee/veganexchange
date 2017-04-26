@@ -9,3 +9,6 @@ jQuery ->
             'copy', 'csv', 'excel', 'pdf', 'print'
         ]
         })
+        
+jQuery ->
+  $('.datepicker').datepicker()
